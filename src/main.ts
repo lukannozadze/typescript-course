@@ -1,20 +1,16 @@
-let myName:string = 'Luka';
-let meaningOfLife:number;
-let isLoading:boolean;
-let album:string|number; //union type
+let stringArr = ["one", "hey", "John"];
 
-myName = 'Luka';
-meaningOfLife = 21;
-isLoading = true;
-album = 1941;
-album = 'Van Halen';
+let guitars = ["Strat", "Les Paul", 5150];
 
-const sum = (a:number,b:number)=>{
-  return a+b;
-}
+let mixedData = ["EVH", 1984, true];
 
+stringArr[0] = "Luka";
+stringArr.push('bye');
 
-let postId:string|number; //union type
-let isActive:number|boolean //union type
+guitars[0] = 1042;
 
-let reg:RegExp = /\w+/g;
+guitars = stringArr;
+
+let test = [];
+let bands:string[] = [];
+bands.push('Arctic Monkeys')
