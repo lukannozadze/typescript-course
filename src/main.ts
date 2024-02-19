@@ -1,17 +1,41 @@
 //Type Aliases
 type stringOrNumber = string | number;
 type stringOrNumberArray = stringOrNumber[];
-interface Guitarist{
+interface Guitarist {
   name?: string;
   active: boolean;
   albums: stringOrNumberArray;
-};
+}
 
 type userId = stringOrNumber;
 
-// interface postId = stringOrNumber; //we cant do the same with interface 
-
+// interface postId = stringOrNumber; //we cant do the same with interface
 
 //Literal types
-let myName:'Dave' | 'John' | 'Amy';
+let myName: "Dave" | "John" | "Amy";
 // myName = 'Rachel' //myName must be Dave or John or Amy
+
+//functions
+
+//return type
+const add = (a: number, b: number) => {
+  return a + b;
+};
+
+//void type
+const logMsg = (message: stringOrNumber) => {
+  console.log(message);
+};
+
+logMsg("Hello");
+logMsg(add(2, 3));
+
+interface mathFunction {
+  (a: number, b: number): number;
+}
+
+let subtract: mathFunction = (a, b) => {
+  return a - b;
+};
+
+logMsg(subtract(2, 1));
