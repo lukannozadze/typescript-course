@@ -9,3 +9,8 @@ guitars = stringArr;
 let test = [];
 let bands = [];
 bands.push('Arctic Monkeys');
+//tuple
+let myTuple = ['John', 42, true];
+//union typed array
+let mixed = ['John', 1, false];
+mixed = myTuple;

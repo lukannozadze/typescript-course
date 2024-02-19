@@ -13,4 +13,12 @@ guitars = stringArr;
 
 let test = [];
 let bands:string[] = [];
-bands.push('Arctic Monkeys')
+bands.push('Arctic Monkeys');
+
+//tuple
+let myTuple:[string,number,boolean] = ['John',42,true];
+
+//union typed array
+let mixed = ['John',1,false];
+
+mixed = myTuple;
