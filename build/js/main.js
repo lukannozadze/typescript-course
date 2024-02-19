@@ -18,3 +18,18 @@ let subtract = (a, b) => {
     return a - b;
 };
 logMsg(subtract(2, 1));
+//optional parameters
+const addAll = (a, b, c) => {
+    if (c) {
+        return a + b + c;
+    }
+    return a + b;
+};
+//default parameter value
+const sumAll = (a = 10, b, c = 2) => {
+    return a + b + c;
+};
+logMsg(addAll(2, 3, 2));
+logMsg(addAll(2, 3));
+logMsg(sumAll(2, 3));
+logMsg(sumAll(undefined, 3));
