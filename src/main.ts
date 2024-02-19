@@ -56,3 +56,15 @@ const greetGuitarist = (guitarist: Guitarist) => {
   return `Hello ${guitarist.name?.toUpperCase()}`;
 };
 console.log(greetGuitarist(JP));
+
+//enums
+
+enum Grade{
+  U=1,
+  D,
+  C,
+  B,
+  A
+}
+
+console.log(Grade.U)
