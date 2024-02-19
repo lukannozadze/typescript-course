@@ -13,3 +13,4 @@ const sum = (a, b) => {
 };
 let postId; //union type
 let isActive; //union type
+let reg = /\w+/g;

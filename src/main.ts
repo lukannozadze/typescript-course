@@ -16,3 +16,5 @@ const sum = (a:number,b:number)=>{
 
 let postId:string|number; //union type
 let isActive:number|boolean //union type
+
+let reg:RegExp = /\w+/g;
