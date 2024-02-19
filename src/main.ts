@@ -1,4 +1,12 @@
-console.log("3" + 3);
-console.log("luka");
+let myName:string = 'Luka';
+let meaningOfLife:number;
+let isLoading:boolean;
 
-let a = 5;
+
+myName = 'Luka';
+meaningOfLife = 21;
+isLoading = true;
+
+const sum = (a:number,b:number)=>{
+  return a+b;
+}
