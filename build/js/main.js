@@ -1,40 +1,20 @@
 "use strict";
-// interface postId = stringOrNumber; //we cant do the same with interface
-//Literal types
-let myName;
-// myName = 'Rachel' //myName must be Dave or John or Amy
-//functions
-//return type
-const add = (a, b) => {
-    return a + b;
-};
-//void type
-const logMsg = (message) => {
-    console.log(message);
-};
-logMsg("Hello");
-logMsg(add(2, 3));
-let subtract = (a, b) => {
-    return a - b;
-};
-logMsg(subtract(2, 1));
-//optional parameters
-const addAll = (a, b, c) => {
-    if (c) {
-        return a + b + c;
+//convert to more or less specific
+let a = 'hello';
+let b = a;
+let c = a;
+let d = 'something';
+let e = 'world';
+const addOrConcat = (a, b, c) => {
+    if (c === 'add') {
+        return a + b;
     }
-    return a + b;
+    return '' + a + b;
 };
-//default parameter value
-const sumAll = (a = 10, b, c = 2) => {
-    return a + b + c;
-};
-logMsg(addAll(2, 3, 2));
-logMsg(addAll(2, 3));
-logMsg(sumAll(2, 3));
-logMsg(sumAll(undefined, 3));
-//rest parameter
-const total = (...args) => {
-    return args.reduce((prev, cur) => prev + cur);
-};
-logMsg(total(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+console.log(addOrConcat(2, 5, 'concat'));
+let result = addOrConcat(2, 2, 'concat');
+//typescript sees no problem, because it trusts you that number is returned
+let result2 = addOrConcat(2, 2, 'concat');
+console.log(result2); //string is returned because of type 'concat'
+//double casting - is not recommended
+10;
