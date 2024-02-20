@@ -28,3 +28,11 @@ console.log(result2); //string is returned because of type 'concat'
 
 //double casting - is not recommended
 (10 as unknown) as string
+
+//The DOM
+
+const img = document.querySelector('img') as HTMLImageElement;
+const myImg = document.getElementById('#img')!;
+
+// img.src
+// myImg.src

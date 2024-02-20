@@ -18,3 +18,8 @@ let result2 = addOrConcat(2, 2, 'concat');
 console.log(result2); //string is returned because of type 'concat'
 //double casting - is not recommended
 10;
+//The DOM
+const img = document.querySelector('img');
+const myImg = document.getElementById('#img');
+// img.src
+// myImg.src
