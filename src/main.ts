@@ -1,34 +1,59 @@
-class Coder{
-    secondLang!:string
-   constructor(public readonly name:string,public music:string,private age:number,protected lang:string = 'Typescript'){
+// class Coder{
+//     secondLang!:string
+//    constructor(public readonly name:string,public music:string,private age:number,protected lang:string = 'Typescript'){
+//     this.name = name;
+//     this.music = music;
+//     this.age = age;
+//     this.lang = lang;
+//    }
+
+//    public getAge(){
+//     return `Hello I'am ${this.age}`
+//    }
+// }
+
+
+// const Dave = new Coder('Dave','Rock',42);
+// // console.log(Dave.getAge());
+// // console.log(Dave.lang);
+
+
+// class WebDev extends Coder{
+// constructor(public computer:string,name:string,music:string,age:number){
+//    super(name,music,age);
+//    this.computer = computer;
+// }
+// public getLang(){
+//   return `I write ${this.lang}`;
+// }
+// }
+
+// const Sara = new WebDev('Mac','Sara','Linkin Park',25);
+
+// console.log(Sara.getLang());
+// //console.log(Sara.lang)
+
+
+interface Musician{
+  name:string,
+  instrument:string,
+  play(action:string):string
+}
+
+class Guitarist implements Musician{
+   name:string
+   instrument:string
+
+   constructor(name:string,instrument:string){
     this.name = name;
-    this.music = music;
-    this.age = age;
-    this.lang = lang;
+    this.instrument = instrument;
    }
 
-   public getAge(){
-    return `Hello I'am ${this.age}`
+   play(action: string): string {
+     return `${this.name} ${action} the ${this.instrument}`
    }
 }
 
+const Page = new Guitarist('Jimmy','guitar');
 
-const Dave = new Coder('Dave','Rock',42);
-// console.log(Dave.getAge());
-// console.log(Dave.lang);
-
-
-class WebDev extends Coder{
-constructor(public computer:string,name:string,music:string,age:number){
-   super(name,music,age);
-   this.computer = computer;
-}
-public getLang(){
-  return `I write ${this.lang}`;
-}
-}
-
-const Sara = new WebDev('Mac','Sara','Linkin Park',25);
-
-console.log(Sara.getLang());
-//console.log(Sara.lang)
+console.log(Page.play('strums'));
