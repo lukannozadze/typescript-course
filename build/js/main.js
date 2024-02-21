@@ -36,3 +36,22 @@ const Amy = new Peeps('Amy');
 console.log(Peeps.count);
 console.log(Steve.id);
 ///////////////////////////////////////////
+class Bands {
+    constructor() {
+        this.datasState = [];
+    }
+    get data() {
+        return this.datasState;
+    }
+    set data(value) {
+        if (typeof value === 'string') {
+            this.datasState.push(value);
+            return;
+        }
+        else
+            throw new Error('Wrong value type');
+    }
+}
+const myBands = new Bands();
+myBands.data = ('Linkin Park');
+console.log(myBands.data);

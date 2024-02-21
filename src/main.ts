@@ -81,3 +81,26 @@ console.log(Peeps.count);
 console.log(Steve.id)
 
 ///////////////////////////////////////////
+
+class Bands{
+  private datasState: string[]
+
+  constructor(){
+    this.datasState = [];
+  }
+  public get data(): string[]{
+    return this.datasState
+  }
+  public set data(value:string){
+    if(typeof value === 'string'){
+      this.datasState.push(value);
+       return
+    }else throw new Error('Wrong value type')
+  }
+}
+
+const myBands = new Bands();
+
+myBands.data = ('Linkin Park');
+
+console.log(myBands.data)
