@@ -1,25 +1,32 @@
 "use strict";
-//convert to more or less specific
-let a = 'hello';
-let b = a;
-let c = a;
-let d = 'something';
-let e = 'world';
-const addOrConcat = (a, b, c) => {
-    if (c === 'add') {
-        return a + b;
+class Coder {
+    constructor(name, music, age, lang = 'Typescript') {
+        this.name = name;
+        this.music = music;
+        this.age = age;
+        this.lang = lang;
+        this.name = name;
+        this.music = music;
+        this.age = age;
+        this.lang = lang;
     }
-    return '' + a + b;
-};
-console.log(addOrConcat(2, 5, 'concat'));
-let result = addOrConcat(2, 2, 'concat');
-//typescript sees no problem, because it trusts you that number is returned
-let result2 = addOrConcat(2, 2, 'concat');
-console.log(result2); //string is returned because of type 'concat'
-//double casting - is not recommended
-10;
-//The DOM
-const img = document.querySelector('img');
-const myImg = document.getElementById('#img');
-// img.src
-// myImg.src
+    getAge() {
+        return `Hello I'am ${this.age}`;
+    }
+}
+const Dave = new Coder('Dave', 'Rock', 42);
+// console.log(Dave.getAge());
+// console.log(Dave.lang);
+class WebDev extends Coder {
+    constructor(computer, name, music, age) {
+        super(name, music, age);
+        this.computer = computer;
+        this.computer = computer;
+    }
+    getLang() {
+        return `I write ${this.lang}`;
+    }
+}
+const Sara = new WebDev('Mac', 'Sara', 'Linkin Park', 25);
+console.log(Sara.getLang());
+//console.log(Sara.lang)

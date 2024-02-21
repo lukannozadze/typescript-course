@@ -1,38 +1,34 @@
-type One = string;
-type Two = string | number;
-type Three = 'hello'
+class Coder{
+    secondLang!:string
+   constructor(public readonly name:string,public music:string,private age:number,protected lang:string = 'Typescript'){
+    this.name = name;
+    this.music = music;
+    this.age = age;
+    this.lang = lang;
+   }
 
-//convert to more or less specific
-let a:One = 'hello';
-let b = a as Two;
-let c = a as Three
-
-let d = <One>'something';
-let e = <string | number>'world'
-
-const addOrConcat = (a:number,b:number,c:'add'|'concat'):number|string =>{
-  if(c==='add'){
-    return a+b;
-  }
-  return '' + a + b;
+   public getAge(){
+    return `Hello I'am ${this.age}`
+   }
 }
 
-console.log(addOrConcat(2,5,'concat'));
 
-let result:string = addOrConcat(2,2,'concat') as string;
+const Dave = new Coder('Dave','Rock',42);
+// console.log(Dave.getAge());
+// console.log(Dave.lang);
 
-//typescript sees no problem, because it trusts you that number is returned
-let result2:number = addOrConcat(2,2,'concat') as number;
 
-console.log(result2); //string is returned because of type 'concat'
+class WebDev extends Coder{
+constructor(public computer:string,name:string,music:string,age:number){
+   super(name,music,age);
+   this.computer = computer;
+}
+public getLang(){
+  return `I write ${this.lang}`;
+}
+}
 
-//double casting - is not recommended
-(10 as unknown) as string
+const Sara = new WebDev('Mac','Sara','Linkin Park',25);
 
-//The DOM
-
-const img = document.querySelector('img') as HTMLImageElement;
-const myImg = document.getElementById('#img')!;
-
-// img.src
-// myImg.src
+console.log(Sara.getLang());
+//console.log(Sara.lang)
